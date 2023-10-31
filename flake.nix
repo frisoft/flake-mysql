@@ -57,34 +57,19 @@
         };
 
         apps.stop = let
-          serv2 = pkgs.writeShellApplication {
+          serv = pkgs.writeShellApplication {
             name = "mysqlstop";
             runtimeInputs = [mysql];
             text = ''
               echo "Stopping Mysql..."
               MYSQL_HOME="$PWD"/mysql
               export MYSQL_UNIX_PORT="$MYSQL_HOME"/mysql.sock
-              echo "AAAAAAAAAAAAAAAAAaStopping Mysql..."
               mysqladmin -u root --socket="$MYSQL_UNIX_PORT" shutdown
             '';
           };
         in {
           type = "app";
-          program = "${serv2}/bin/mysqlstop";
+          program = "${serv}/bin/mysqlstop";
         };
-
-        # packages.stop = pkgs.writeScriptBin "stop" ''
-        #   echo "I am currently being run stop!"
-        # '';
-
-        # An app that uses the `runme` package
-        # apps.default = {
-        #   type = "app";
-        #   program = "${self.packages.${system}.default}/bin/mysqlserver";
-        # };
-        # apps.stop = {
-        #   type = "app";
-        #   program = "${self.packages.${system}.stop}/bin/stop";
-        # };
       });
 }
