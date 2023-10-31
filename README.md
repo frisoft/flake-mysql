@@ -1,18 +1,20 @@
 # Run mysql server
 
 ```
-nix-shell
+nix run
 ```
 
 # Stop the server
 
 You need just to close the nix-shell
 
-`exit`
+```
+nix run .#stop
+```
 
 # Reset the DB
 
-Before startint the server:
+Before starting the server:
 
 ```
 rm -rf mysql
