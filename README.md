@@ -6,11 +6,11 @@ nix run
 
 From Github
 
-`nix run github:frisoft/flake-mysql`
+```
+nix run github:frisoft/flake-mysql
+```
 
 # Stop the server
-
-You need just to close the nix-shell
 
 ```
 nix run .#stop
@@ -18,7 +18,9 @@ nix run .#stop
 
 From Github
 
-`nix run github:frisoft/flake-mysql#stop`
+```
+nix run github:frisoft/flake-mysql#stop
+```
 
 # Reset the DB
 
@@ -31,6 +33,8 @@ rm -rf mysql
 
 # Logs
 
-`cat mysql/mysql.log`
+```
+cat mysql/mysql.log
+```
 
 
