@@ -34,10 +34,6 @@
               if [ ! -d "$MYSQL_HOME" ]; then
                 # Make sure to use normal authentication method otherwise we can only
                 # connect with unix account. But users do not actually exists in nix.
-                # mysql_install_db \
-                #   --auth-root-authentication-method=normal \
-                #   --datadir=$MYSQL_DATADIR --basedir=$MYSQL_BASEDIR \
-                #   --pid-file=$MYSQL_PID_FILE
                 echo "Initializing mysql database"
                 which mysqld
                 mkdir -p "$MYSQL_DATADIR"
