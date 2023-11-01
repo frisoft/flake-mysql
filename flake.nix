@@ -23,7 +23,7 @@
             name = "mysqlserver";
             runtimeInputs = [mysql];
             text = ''
-              echo "I am currently being run!"
+              echo "Starting Mysql..."
               MYSQL_BASEDIR=${mysql}
               MYSQL_HOME=$PWD/mysql
               MYSQL_DATADIR=$MYSQL_HOME/data
